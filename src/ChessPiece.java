@@ -1,10 +1,11 @@
 public class ChessPiece extends Piece {
 
+    private static final Color WHITE = null;
     private Color color;
 
-    public ChessPiece(Board board, Color color) {
+    public ChessPiece(Board board, java.awt.Color white) {
         super(board);
-        this.color = color;
+        this.color = WHITE;
     }
 
     public Color getColor() {
