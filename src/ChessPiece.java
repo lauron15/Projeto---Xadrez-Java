@@ -11,4 +11,8 @@ public class ChessPiece extends Piece {
         return color;
     }
 
+    @Override
+    public String toString() {
+        return color.toString(); // Retorna a representação da cor da peça
+    }
 }
