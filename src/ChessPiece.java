@@ -1,4 +1,4 @@
-public class ChessPiece extends Piece {
+public abstract class ChessPiece extends Piece {
 
     private static final Color WHITE = null;
     private Color color;
