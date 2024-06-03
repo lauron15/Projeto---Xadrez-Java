@@ -1,3 +1,5 @@
+import java.awt.Color;
+
 public class Rook extends ChessPiece {
 
     public Rook(Board board, java.awt.Color white) {
@@ -57,6 +59,12 @@ public class Rook extends ChessPiece {
         }
 
         return mat;
+    }
+
+    @Override
+    protected Color getcolor() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getcolor'");
     }
 
 }
