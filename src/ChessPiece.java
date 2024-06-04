@@ -1,20 +1,14 @@
 public abstract class ChessPiece extends Piece {
 
-    private static final Color WHITE = null;
     private Color color;
 
-    public ChessPiece(Board board, java.awt.Color white) {
+    public ChessPiece(Board board, Color color) {
         super(board);
-        this.color = WHITE;
+        this.color = color;
     }
 
     public Color getColor() {
         return color;
-    }
-
-    @Override
-    public String toString() {
-        return color.toString(); // Retorna a representação da cor da peça
     }
 
     protected boolean isThereOpponentPiece(Position position) {
@@ -22,5 +16,4 @@ public abstract class ChessPiece extends Piece {
         return p != null && p.getColor() != color;
     }
 
-    protected abstract java.awt.Color getcolor();
 }

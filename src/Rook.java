@@ -1,10 +1,7 @@
-import java.awt.Color;
-
 public class Rook extends ChessPiece {
 
-    public Rook(Board board, java.awt.Color white) {
-        super(board, white);
-
+    public Rook(Board board, Color color) {
+        super(board, color);
     }
 
     @Override
@@ -16,8 +13,9 @@ public class Rook extends ChessPiece {
     public boolean[][] possibleMoves() {
         boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
 
-        // above
         Position p = new Position(0, 0);
+
+        // above
         p.setValues(position.getRow() - 1, position.getColumn());
         while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
             mat[p.getRow()][p.getColumn()] = true;
@@ -28,7 +26,6 @@ public class Rook extends ChessPiece {
         }
 
         // left
-
         p.setValues(position.getRow(), position.getColumn() - 1);
         while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
             mat[p.getRow()][p.getColumn()] = true;
@@ -39,7 +36,6 @@ public class Rook extends ChessPiece {
         }
 
         // right
-
         p.setValues(position.getRow(), position.getColumn() + 1);
         while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
             mat[p.getRow()][p.getColumn()] = true;
@@ -57,14 +53,7 @@ public class Rook extends ChessPiece {
         if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
             mat[p.getRow()][p.getColumn()] = true;
         }
-
         return mat;
-    }
-
-    @Override
-    protected Color getcolor() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getcolor'");
     }
 
 }

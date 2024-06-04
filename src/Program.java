@@ -2,25 +2,29 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Program {
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        ChessMatch ChessMatch = new ChessMatch();
+
+        ChessMatch chessMatch = new ChessMatch();
 
         while (true) {
             try {
                 UI.clearScreen();
-                UI.printMatch(ChessMatch);
+                UI.printMatch(chessMatch);
                 System.out.println();
-                System.out.println("Source: ");
+                System.out.print("Source: ");
                 ChessPosition source = UI.readChessPosition(sc);
-                boolean[][] possibleMoves = ChessMatch.possibleMoves(source);
+
+                boolean[][] possibleMoves = chessMatch.possibleMoves(source);
                 UI.clearScreen();
-                UI.printBoard(ChessMatch.getPieces(), possibleMoves);
+                UI.printBoard(chessMatch.getPieces(), possibleMoves);
 
                 System.out.println();
-                System.out.println("Target: ");
+                System.out.print("Target: ");
                 ChessPosition target = UI.readChessPosition(sc);
-                ChessPiece capturedsPiece = ChessMatch.performChessMove(source, target);
+
+                ChessPiece capturedPiece = chessMatch.perfomChessMove(source, target);
             } catch (ChessException e) {
                 System.out.println(e.getMessage());
                 sc.nextLine();
@@ -30,4 +34,5 @@ public class Program {
             }
         }
     }
+
 }
